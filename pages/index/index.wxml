@@ -1,0 +1,55 @@
+<view class="container">
+  <view class="header">
+    <view class="city-select" bindtap="goToCitySelect">
+      <text class="city-name">{{currentCity.name || '选择城市'}}</text>
+      <text class="arrow">›</text>
+    </view>
+  </view>
+
+  <weather-card 
+    weather="{{weather}}" 
+    loading="{{loading}}" 
+    error="{{error}}"
+    bind:retry="onRetry"
+  />
+
+  <view wx:if="{{weather}}" class="forecast-section">
+    <view class="section-title">24小时预报</view>
+    <scroll-view class="hourly-scroll" scroll-x>
+      <view class="hourly-list">
+        <view wx:for="{{weather.hourlyForecast}}" wx:key="timeStr" class="hourly-item">
+          <text class="hour-time">{{item.timeStr}}</text>
+          <text class="hour-icon">{{item.weatherInfo.icon}}</text>
+          <text class="hour-temp">{{item.temperature}}°</text>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view wx:if="{{weather}}" class="forecast-section">
+    <view class="section-title">7天预报</view>
+    <view class="daily-list">
+      <view wx:for="{{weather.dailyForecast}}" wx:key="dateStr" class="daily-item">
+        <text class="day-name">{{item.weekDay}}</text>
+        <text class="day-date">{{item.dateStr}}</text>
+        <text class="day-icon">{{item.weatherInfo.icon}}</text>
+        <text class="day-temp">{{item.minTemp}}° ~ {{item.maxTemp}}°</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-bar">
+    <button class="action-btn" bindtap="toggleHistory">
+      📋 {{showHistory ? '隐藏' : '查看'}}历史记录 ({{historyRecords.length}})
+    </button>
+  </view>
+
+  <view wx:if="{{showHistory && historyRecords.length > 0}}" class="history-panel">
+    <view class="history-title">查询历史</view>
+    <view wx:for="{{historyRecords}}" wx:key="id" class="history-item">
+      <view class="history-city">{{item.cityName}}</view>
+      <view class="history-weather">{{item.weather.current.weatherIcon}} {{item.weather.current.temperature}}°</view>
+      <view class="history-time">{{item.timeStr}}</view>
+    </view>
+  </view>
+</view>

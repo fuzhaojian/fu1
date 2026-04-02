@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="search-bar">
+    <input 
+      class="search-input" 
+      placeholder="搜索城市名称或拼音" 
+      value="{{searchKeyword}}"
+      bindinput="onSearchInput"
+    />
+    <text wx:if="{{searchKeyword}}" class="clear-btn" bindtap="onClearSearch">✕</text>
+  </view>
+
+  <view wx:if="{{recentCities.length > 0 && !searchKeyword && !selectedProvince}}" class="recent-section">
+    <view class="section-title">最近访问</view>
+    <view class="recent-list">
+      <view 
+        wx:for="{{recentCities}}" 
+        wx:key="code" 
+        class="recent-item"
+        bindtap="onRecentCityTap"
+        data-city="{{item}}"
+      >
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+
+  <view wx:if="{{!searchKeyword}}" class="province-section">
+    <view class="section-title">按省份筛选</view>
+    <scroll-view class="province-scroll" scroll-x>
+      <view class="province-list">
+        <view 
+          wx:for="{{provinces}}" 
+          wx:key="*this" 
+          class="province-item {{selectedProvince === item ? 'active' : ''}}"
+          bindtap="onProvinceTap"
+          data-province="{{item}}"
+        >
+          {{item}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <view class="city-section">
+    <view class="section-title">
+      {{searchKeyword ? '搜索结果' : (selectedProvince ? selectedProvince : '全部城市')}}
+      <text class="count">({{filteredCities.length}})</text>
+    </view>
+    
+    <view wx:if="{{filteredCities.length === 0}}" class="empty-tip">
+      未找到匹配的城市
+    </view>
+
+    <view class="city-list">
+      <view 
+        wx:for="{{filteredCities}}" 
+        wx:key="code" 
+        class="city-item"
+        bindtap="onCityTap"
+        data-city="{{item}}"
+      >
+        <view class="city-info">
+          <text class="city-name">{{item.name}}</text>
+          <text class="city-pinyin">{{item.pinyin}}</text>
+        </view>
+        <text class="city-province">{{item.province}}</text>
+      </view>
+    </view>
+  </view>
+</view>

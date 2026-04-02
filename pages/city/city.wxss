@@ -1,0 +1,152 @@
+.container {
+  padding: 20rpx;
+  min-height: 100vh;
+}
+
+.search-bar {
+  position: relative;
+  background: white;
+  border-radius: 50rpx;
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+  margin-bottom: 30rpx;
+}
+
+.search-input {
+  flex: 1;
+  height: 80rpx;
+  font-size: 28rpx;
+}
+
+.clear-btn {
+  font-size: 28rpx;
+  color: #909399;
+  padding: 10rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #303133;
+  margin-bottom: 20rpx;
+}
+
+.count {
+  font-size: 24rpx;
+  color: #909399;
+  font-weight: normal;
+  margin-left: 8rpx;
+}
+
+.recent-section {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.recent-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx;
+}
+
+.recent-item {
+  background: #ecf5ff;
+  color: #409eff;
+  padding: 12rpx 24rpx;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+}
+
+.province-section {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.province-scroll {
+  white-space: nowrap;
+}
+
+.province-list {
+  display: flex;
+  gap: 16rpx;
+  padding-bottom: 10rpx;
+}
+
+.province-item {
+  background: #f5f7fa;
+  color: #606266;
+  padding: 12rpx 24rpx;
+  border-radius: 40rpx;
+  font-size: 24rpx;
+  transition: all 0.2s;
+}
+
+.province-item.active {
+  background: #409eff;
+  color: white;
+}
+
+.city-section {
+  background: white;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.06);
+}
+
+.city-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.city-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #f5f7fa;
+}
+
+.city-item:last-child {
+  border-bottom: none;
+}
+
+.city-info {
+  display: flex;
+  align-items: baseline;
+  gap: 16rpx;
+}
+
+.city-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #303133;
+}
+
+.city-pinyin {
+  font-size: 22rpx;
+  color: #909399;
+  text-transform: capitalize;
+}
+
+.city-province {
+  font-size: 24rpx;
+  color: #409eff;
+  background: #ecf5ff;
+  padding: 6rpx 16rpx;
+  border-radius: 20rpx;
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 60rpx 0;
+  color: #909399;
+  font-size: 28rpx;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "weather-card": "../../components/weather-card/weather-card"
+  },
+  "navigationBarTitleText": "天气查询",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#f5f7fa"
+}
