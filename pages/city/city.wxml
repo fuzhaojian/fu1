@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="search-bar">
+    <view class="search-input-wrapper">
+      <text class="search-icon">🔍</text>
+      <input 
+        class="search-input" 
+        type="text" 
+        placeholder="搜索城市名称" 
+        value="{{searchKeyword}}"
+        bindinput="onSearchInput"
+        confirm-type="search"
+        bindconfirm="onSearchConfirm"
+      />
+      <text class="clear-icon" wx:if="{{searchKeyword}}" bindtap="onClearSearch">✕</text>
+    </view>
+  </view>
+
+  <view class="city-list">
+    <view 
+      class="city-item {{item.id === currentCityId ? 'active' : ''}}" 
+      wx:for="{{filteredCities}}" 
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onCitySelect"
+    >
+      <text class="city-name">{{item.name}}</text>
+      <text class="city-check" wx:if="{{item.id === currentCityId}}">✓</text>
+    </view>
+  </view>
+
+  <view class="empty-state" wx:if="{{filteredCities.length === 0}}">
+    <text class="empty-icon">🔍</text>
+    <text class="empty-text">未找到匹配的城市</text>
+  </view>
+</view>

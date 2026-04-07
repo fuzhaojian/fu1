@@ -1,0 +1,26 @@
+# npm 缓存
+.npm-cache/
+
+# 依赖目录
+node_modules/
+
+# React 源码（如有）
+src/
+config/
+
+# 配置文件
+package.json
+package-lock.json
+vite.config.js
+index.html
+
+# 其他
+README.md
+_update-notifier-last-checked
+
+# IDE
+.vscode/
+.idea/
+
+# 日志
+*.log

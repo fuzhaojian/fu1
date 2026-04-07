@@ -1,0 +1,284 @@
+.container {
+  padding: 20rpx;
+  min-height: 1000px;
+  background-color: #f5f7fa;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+  padding: 0 10rpx;
+}
+
+.city-selector {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 20rpx 30rpx;
+  border-radius: 50rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.08);
+}
+
+.city-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  margin-right: 10rpx;
+}
+
+.arrow {
+  font-size: 24rpx;
+  color: #667eea;
+}
+
+.network-status {
+  padding: 16rpx 30rpx;
+  border-radius: 40rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+}
+
+.network-status.online {
+  background: #67c23a;
+  color: white;
+}
+
+.network-status.offline {
+  background: #f56c6c;
+  color: white;
+}
+
+.weather-card {
+  background: white;
+  border-radius: 30rpx;
+  padding: 40rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  text-align: center;
+  padding: 100rpx 40rpx;
+}
+
+.loading-spinner {
+  width: 80rpx;
+  height: 80rpx;
+  border: 6rpx solid #f3f3f3;
+  border-top: 6rpx solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 30rpx;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-card {
+  text-align: center;
+  padding: 100rpx 40rpx;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-icon {
+  font-size: 100rpx;
+  margin-bottom: 30rpx;
+}
+
+.error-title {
+  font-size: 36rpx;
+  color: #f56c6c;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+
+.error-message {
+  font-size: 28rpx;
+  color: #909399;
+  margin-bottom: 40rpx;
+}
+
+.retry-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50rpx;
+  padding: 24rpx 80rpx;
+  font-size: 30rpx;
+  border: none;
+}
+
+.retry-btn::after {
+  border: none;
+}
+
+.weather-header {
+  text-align: right;
+  margin-bottom: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.update-time {
+  font-size: 24rpx;
+  color: #909399;
+}
+
+.weather-main {
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+
+.temperature-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.temperature {
+  font-size: 120rpx;
+  font-weight: 300;
+  color: #333;
+  line-height: 1;
+}
+
+.weather-icon {
+  font-size: 100rpx;
+}
+
+.weather-desc {
+  font-size: 36rpx;
+  color: #666;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50rpx;
+  padding: 30rpx;
+  background: #f8f9fa;
+  border-radius: 20rpx;
+}
+
+.detail-item {
+  text-align: center;
+}
+
+.detail-label {
+  display: block;
+  font-size: 24rpx;
+  color: #909399;
+  margin-bottom: 10rpx;
+}
+
+.detail-value {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.section-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+
+.hourly-forecast {
+  margin-bottom: 40rpx;
+}
+
+.hourly-list {
+  white-space: nowrap;
+}
+
+.hourly-item {
+  display: inline-block;
+  text-align: center;
+  padding: 20rpx;
+  background: #f8f9fa;
+  border-radius: 16rpx;
+  margin-right: 20rpx;
+  min-width: 120rpx;
+}
+
+.hour-time {
+  display: block;
+  font-size: 22rpx;
+  color: #909399;
+  margin-bottom: 10rpx;
+}
+
+.hour-icon {
+  display: block;
+  font-size: 48rpx;
+  margin-bottom: 10rpx;
+}
+
+.hour-temp {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.daily-forecast {
+  margin-top: 40rpx;
+}
+
+.daily-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.daily-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 30rpx;
+  background: #f8f9fa;
+  border-radius: 16rpx;
+}
+
+.day-name {
+  font-weight: 600;
+  color: #333;
+  width: 100rpx;
+  font-size: 28rpx;
+}
+
+.day-date {
+  color: #909399;
+  font-size: 24rpx;
+  width: 120rpx;
+}
+
+.day-icon {
+  font-size: 56rpx;
+}
+
+.day-temp {
+  color: #666;
+  font-weight: 500;
+  font-size: 28rpx;
+}
+
+.footer {
+  text-align: center;
+  padding: 30rpx;
+  color: #999;
+  font-size: 24rpx;
+}
