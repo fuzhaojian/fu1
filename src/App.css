@@ -1,0 +1,177 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.status {
+  font-size: 1rem;
+}
+
+.online-status {
+  padding: 5px 15px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.online-status.online {
+  color: #4ade80;
+}
+
+.online-status.offline {
+  color: #f87171;
+}
+
+.main {
+  flex: 1;
+}
+
+.city-selector {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.city-selector label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.city-selector select {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 2px solid #667eea;
+  border-radius: 10px;
+  background: white;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+.city-selector select:focus {
+  outline: none;
+  border-color: #764ba2;
+}
+
+.history-section {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.history-header h3 {
+  color: #333;
+}
+
+.history-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-export,
+.btn-clear {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.btn-export {
+  background: #667eea;
+  color: white;
+}
+
+.btn-export:hover {
+  background: #5a67d8;
+}
+
+.btn-clear {
+  background: #f56565;
+  color: white;
+}
+
+.btn-clear:hover {
+  background: #e53e3e;
+}
+
+.history-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.history-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-time {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.history-city {
+  font-weight: bold;
+  color: #333;
+}
+
+.history-temp {
+  font-size: 1.1rem;
+  color: #667eea;
+  font-weight: bold;
+}
+
+.history-desc {
+  color: #666;
+}
+
+.no-history {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+}
+
+.footer {
+  text-align: center;
+  color: white;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+.footer p {
+  margin: 5px 0;
+  opacity: 0.8;
+}
